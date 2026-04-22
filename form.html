@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QA Fitness – Registration</title>
+  <link rel="stylesheet" href="style.css/forms.css">
+</head>
+<body>
+
+  <div id="topPopup" class="top-popup">Processing...</div>
+
+  <div class="wizard-wrapper">
+    <div class="wizard-card">
+
+      <div class="wizard-header">
+        <div class="wizard-title">QA Fitness – Join & Train</div>
+        <div class="steps-indicator">
+          <div class="step-dot active">1</div>
+          <div class="step-dot">2</div>
+          <div class="step-dot">3</div>
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="step active" id="step1">
+        <h2>Step 1 – Registration</h2>
+        <p class="sub">Choose your plan and enter your details.</p>
+
+        <form id="regForm">
+
+          <label>Membership Plan</label>
+
+          <div class="radio-row membership-row">
+            <label class="radio-pill">
+              <input type="radio" name="membership" value="Free Plan - £0" checked>
+              Free Plan (£0)
+            </label>
+
+            <label class="radio-pill">
+              <input type="radio" name="membership" value="Starter - £25">
+              Starter (£25)
+            </label>
+          </div>
+
+          <div class="radio-row membership-row">
+            <label class="radio-pill">
+              <input type="radio" name="membership" value="Pro Elite - £45">
+              Pro Elite (£45)
+            </label>
+
+            <label class="radio-pill">
+              <input type="radio" name="membership" value="Ultimate - £75">
+              Ultimate (£75)
+            </label>
+          </div>
+
+          <label>First name</label>
+          <input name="firstName" required>
+
+          <label>Last name</label>
+          <input name="lastName" required>
+
+          <label>Email</label>
+          <input type="email" name="email" required>
+
+          <label>Phone (optional)</label>
+          <input name="phone">
+
+          <label>Age</label>
+          <input type="number" name="age" min="10" max="100" required>
+
+          <label>Weight (kg)</label>
+          <input type="number" name="weight" min="20" max="300" required>
+
+          <label>Height (cm)</label>
+          <input type="number" name="height" min="80" max="250" required>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Next: Trainers →</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" id="step2">
+        <h2>Step 2 – Choose Your Trainer</h2>
+        <p class="sub">Pick the trainer whose abilities match your goals.</p>
+
+        <section id="trainers">
+          <div class="trainer-container" id="trainerList"></div>
+        </section>
+
+        <div class="selected-info" id="selectedTrainerInfo">
+          No trainer selected yet.
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="backToStep1">← Back</button>
+          <button class="btn btn-primary" id="toPaymentBtn" disabled>Next: Payment →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" id="step3">
+        <h2>Step 3 – Secure Payment</h2>
+        <p class="sub">UK card detection with live validation.</p>
+
+        <div class="payment-grid">
+          <div>
+            <label>Cardholder name</label>
+            <input id="cardName">
+
+            <label>Card number</label>
+            <input id="cardNumber" maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
+            <div class="hint" id="cardHint">Enter a valid Visa, Mastercard or Amex number.</div>
+
+            <div class="field-row">
+              <div style="flex:1;">
+                <label>Expiry (MM/YY)</label>
+                <input id="cardExpiry" maxlength="5" placeholder="MM/YY">
+              </div>
+              <div style="flex:1;">
+                <label>CVV</label>
+                <input id="cardCvv" maxlength="4">
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn btn-ghost" id="backToStep2">← Back</button>
+              <button class="btn btn-primary" id="payBtn">Pay & Complete →</button>
+            </div>
+          </div>
+
+          <div class="card-preview">
+            <div class="card-chip"></div>
+            <div class="card-number-preview" id="cardNumberPreview">•••• •••• •••• ••••</div>
+            <div class="card-row">
+              <div>
+                <div style="font-size:0.7rem;opacity:.8;">CARDHOLDER</div>
+                <div id="cardNamePreview">YOUR NAME</div>
+              </div>
+              <div>
+                <div style="font-size:0.7rem;opacity:.8;">EXPIRES</div>
+                <div id="cardExpiryPreview">MM/YY</div>
+              </div>
+            </div>
+            <div class="card-brand" id="cardBrand">UK CARD</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>QA Fitness</h4>
+        <p>Premium UK‑based training and coaching.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: info@qafitness.co.uk</p>
+        <p>London, United Kingdom</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="#">Privacy policy</a><br>
+        <a href="#">Terms & conditions</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="yearSpan"></span> QA Fitness. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="forms.js"></script>
+</body>
+</html>

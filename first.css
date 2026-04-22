@@ -1,0 +1,376 @@
+/* --- 1. GLOBAL SETTINGS --- */
+:root {
+    --primary: #d4ff00; /* Neon Green */
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* --- 2. NAVIGATION --- */
+header {
+    background: rgba(18, 18, 18, 0.95);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.container { max-width: 1200px; margin: auto; padding: 0 20px; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; text-decoration: none; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-links a { color: #fff; text-decoration: none; font-weight: 500; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.nav-btn {
+    background: var(--primary);
+    color: #000 !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* --- 3. HERO & SECTIONS --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('banner.png') center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+
+.hero h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; letter-spacing: 2px; }
+.clock-display { color: var(--primary); font-size: 1.2rem; margin: 20px 0; font-weight: 600; }
+
+.section-padding { padding: 80px 0; }
+.section-title { text-align: center; font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; }
+.gray-bg { background-color: #1a1a1a; }
+
+/* --- 4. CARDS & GRIDS --- */
+.grid-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.facility-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid #333;
+    opacity: 0; transform: translateY(20px); /* For Scroll Animation */
+}
+
+.facility-card.show-card { opacity: 1; transform: translateY(0); }
+.facility-card img { width: 100%; height: 250px; object-fit: cover; }
+.card-text { padding: 20px; }
+
+.plan-card {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.plan-card.featured { border-color: var(--primary); transform: scale(1.05); background: #000; }
+.price { font-size: 2.5rem; font-weight: 700; color: var(--primary); }
+
+/* --- 5. BMI CALCULATOR --- */
+.calc-wrapper { display: flex; gap: 40px; flex-wrap: wrap; }
+.calc-card { background: var(--card-bg); padding: 30px; border-radius: 10px; flex: 1; border-left: 5px solid var(--primary); }
+.input-row { margin-bottom: 15px; }
+.input-row input { width: 100%; padding: 12px; background: #2a2a2a; border: 1px solid #444; color: #fff; border-radius: 4px; }
+.calc-btn { width: 100%; padding: 15px; background: var(--primary); border: none; font-weight: 700; cursor: pointer; border-radius: 4px; }
+
+/* --- 6. MAP & FOOTER --- */
+#map { filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%); }
+
+.site-footer { background: #080808; padding: 60px 0 20px; border-top: 1px solid #333; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; }
+.footer-nav ul { list-style: none; }
+.footer-nav a { color: var(--text-gray); text-decoration: none; }
+.footer-nav a:hover { color: var(--primary); }
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+}
+/*logo design*/
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: 2px;
+}
+
+/* Half Q in green */
+.q-half {
+    color: #00ff66;
+    display: inline-block;
+    clip-path: inset(0 50% 0 0); /* shows only left half */
+}
+
+/* Full A in green */
+.q-rest {
+    color: #00ff66;
+}
+
+/* FITNESS in white */
+.fit {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+/* --- Testimonial Section Styles --- */
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #333; /* Darker text for readability on white background */
+}
+
+.testimonial-content {
+    flex: 1;
+    padding: 50px;
+}
+
+.quote-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: #444;
+}
+
+.testimonial-image {
+    flex: 1;
+    height: 100%;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .testimonial-content {
+        padding: 30px;
+    }
+}
+
+/* Mobile Screen size*/
+/* Tablet and Mobile adjustments */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem; /* Shrink text so it doesn't wrap weirdly */
+    }
+    
+    .calc-wrapper {
+        flex-direction: column; /* Stack calculator info and form */
+        gap: 30px;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; /* Usually, you'd replace this with a 'Hamburger' menu */
+    }
+    
+    .grid-display {
+        grid-template-columns: 1fr; /* Force 1 column for Features and Plans */
+    }
+
+    .hero {
+        height: 60vh; /* Make banner shorter on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .testimonial-card {
+        flex-direction: column-reverse; /* Put the text above the image on mobile */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack footer columns */
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+/* Footer Container */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    padding: 80px 0 40px;
+    border-top: 2px solid #222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Social Bar Styling */
+.social-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+.social-bar span {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: var(--text-white);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border: 1px solid #333;
+}
+
+/* Neon Hover Effect */
+.social-icon:hover {
+    background: var(--primary-neon);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--primary-neon);
+    border-color: var(--primary-neon);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-bar { flex-direction: column; }
+}
+
+
+/* animation*/
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply to Hero Content */
+.hero-content h1 {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-content p {
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.3s; /* Sequential entrance */
+    opacity: 0; /* Hidden until animation starts */
+}
+
+.hero-btns {
+    animation: fadeInUp 1.4s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+
+
+
+
+/* Initial hidden state */
+.facility-card, .plan-card, .testimonial-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Final visible state triggered by jQuery */
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px var(--primary-neon); }
+    50% { box-shadow: 0 0 20px var(--primary-neon); }
+    100% { box-shadow: 0 0 5px var(--primary-neon); }
+}
+
+.social-icon:hover {
+    animation: pulseGlow 1.5s infinite;
+    background: var(--primary-neon);
+    color: #000;
+}
+
+
+
+header {
+    z-index: 1000; /* Keeps nav on top */
+}
+
+.plan-btn, .cta-button, .calc-btn {
+    position: relative;
+    z-index: 10; 
+}

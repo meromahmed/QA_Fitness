@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QA Fitness — Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css/features.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <section class="hero">
+    <div class="brand">QA Fitness — Premium Gym</div>
+    <h1>OUR<br><span>FEATURES</span></h1>
+    <p>Everything you need to train harder, recover faster, and reach your peak. Click any card to see the details.</p>
+  </section>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all', this)">All</button>
+    <button class="filter-btn" onclick="filter('training', this)">Training</button>
+    <button class="filter-btn" onclick="filter('recovery', this)">Recovery</button>
+    <button class="filter-btn" onclick="filter('amenity', this)">Amenities</button>
+    <button class="filter-btn" onclick="filter('wellness', this)">Wellness</button>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <div class="feature-card" data-cat="training" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🏋️</div>
+          <span class="card-tag">Training</span>
+          <div class="card-title">Pro Equipment</div>
+          <div class="card-desc">200+ machines and free weights — Olympic platforms and functional rigs.</div>
+          <div class="card-detail"><span><span class="dot"></span>200+ pieces</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Equipment Specs</h3>
+          <p>We use Hammer Strength and Rogue Fitness gear. Our platforms are reinforced for heavy drops, and our cables are inspected daily for smooth movement.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="training" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🧑‍🏫</div>
+          <span class="card-tag">Training</span>
+          <div class="card-title">Personal Trainer</div>
+          <div class="card-desc">One-on-one sessions with certified trainers tailored to your goals.</div>
+          <div class="card-detail"><span><span class="dot"></span>Certified coaches</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Expert Guidance</h3>
+          <p>Our trainers hold Level 3+ certifications. We offer bi-weekly progress tracking, form correction, and custom workout plans via our gym app.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="training" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🥊</div>
+          <span class="card-tag">Training</span>
+          <div class="card-title">Group Classes</div>
+          <div class="card-desc">HIIT, boxing, yoga, and more — over 30 weekly classes for all levels.</div>
+          <div class="card-detail"><span><span class="dot"></span>30+ weekly</span></div>
+        </div>
+        <div class="card-back">
+          <h3>The Studio</h3>
+          <p>Classes are held in our climate-controlled studios. We provide all equipment, including gloves for boxing and mats for yoga. Just bring your energy.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="recovery" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🛁</div>
+          <span class="card-tag">Recovery</span>
+          <div class="card-title">Hot Bath</div>
+          <div class="card-desc">Therapeutic hot baths at 38–42°C to ease muscle tension and soreness.</div>
+          <div class="card-detail"><span><span class="dot"></span>38–42°C</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Heat Therapy</h3>
+          <p>Soaking in our mineral-infused hot baths increases blood flow to tired muscles, helping you recover faster after high-intensity training sessions.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="recovery" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🧊</div>
+          <span class="card-tag">Recovery</span>
+          <div class="card-title">Cold Bath</div>
+          <div class="card-desc">Ice bath plunge pools at 10–15°C — the secret for reducing inflammation.</div>
+          <div class="card-detail"><span><span class="dot"></span>10–15°C</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Cryotherapy</h3>
+          <p>The cold plunge constricts blood vessels and flushes out metabolic waste. It’s the gold standard for elite athletes to stop DOMS in its tracks.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="recovery" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🔥</div>
+          <span class="card-tag">Recovery</span>
+          <div class="card-title">Sauna Room</div>
+          <div class="card-desc">Finnish dry sauna and steam room to flush toxins and relax joints.</div>
+          <div class="card-detail"><span><span class="dot"></span>Dry & Steam</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Detoxify</h3>
+          <p>Our traditional wood-lined sauna reaches 85°C. Great for skin health, improved cardiovascular endurance, and total mental decompression.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="wellness" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">💆</div>
+          <span class="card-tag">Wellness</span>
+          <div class="card-title">Massage Therapy</div>
+          <div class="card-desc">Sports massage and deep tissue sessions with licensed therapists.</div>
+          <div class="card-detail"><span><span class="dot"></span>By Appointment</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Body Work</h3>
+          <p>Choose from sports massage, trigger point therapy, or assisted stretching. Perfect for addressing chronic tightness and preventing injury.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="wellness" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🥗</div>
+          <span class="card-tag">Wellness</span>
+          <div class="card-title">Nutrition Bar</div>
+          <div class="card-desc">Fresh protein shakes, pre-workouts, and personalized diet plans.</div>
+          <div class="card-detail"><span><span class="dot"></span>Fresh Daily</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Fuel Your Body</h3>
+          <p>We serve pharmaceutical-grade supplements and organic whole foods. Our nutritionists can build a macro plan that fits your exact body goals.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="amenity" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">📶</div>
+          <span class="card-tag">Amenity</span>
+          <div class="card-title">High-Speed WiFi</div>
+          <div class="card-desc">Gigabit fibre WiFi across all zones — stay connected while you train.</div>
+          <div class="card-detail"><span><span class="dot"></span>1 Gbps</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Connect</h3>
+          <p>Full signal strength even in the locker rooms. Stream your workout playlists in 4K or get some work done in our lounge area between sets.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="amenity" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🔒</div>
+          <span class="card-tag">Amenity</span>
+          <div class="card-title">Secure Lockers</div>
+          <div class="card-desc">Smart digital lockers with app-based access to keep your gear safe.</div>
+          <div class="card-detail"><span><span class="dot"></span>App-Enabled</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Smart Security</h3>
+          <p>No need for padlocks. Use your membership QR code to lock and unlock. Each locker includes a USB charging port for your devices.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="amenity" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🚿</div>
+          <span class="card-tag">Amenity</span>
+          <div class="card-title">Premium Changing</div>
+          <div class="card-desc">Rainfall showers, towel service, and complimentary toiletries.</div>
+          <div class="card-detail"><span><span class="dot"></span>Towel Included</span></div>
+        </div>
+        <div class="card-back">
+          <h3>The Spa Suite</h3>
+          <p>Our changing rooms feature Dyson hair dryers, luxury shower gels, and fresh towels laundered daily. Experience the ultimate post-workout refresh.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" data-cat="amenity" onclick="toggleFlip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon">🅿️</div>
+          <span class="card-tag">Amenity</span>
+          <div class="card-title">Free Parking</div>
+          <div class="card-desc">Dedicated free parking spaces for all active members — CCTV monitored.</div>
+          <div class="card-detail"><span><span class="dot"></span>50+ Spaces</span></div>
+        </div>
+        <div class="card-back">
+          <h3>Easy Access</h3>
+          <p>Skip the city parking stress. Our private lot is located directly behind the gym with secure gated entry for members only.</p>
+          <div class="tap-hint">Click to flip back</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Machines</div></div>
+    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Weekly Classes</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Access</div></div>
+  </div>
+
+  <div class="cta-strip">
+    <h2>Ready to Start Training?</h2>
+  </div>
+
+  <script src="features.js"></script>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">QA<span>Fitness</span></div>
+                    <p>Empowering every body. Open 05:00 – 23:00.</p>
+                </div>
+                <nav class="footer-nav">
+                    <h3>NAVIGATION</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="form.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h3>FIND US</h3>
+                    <address>
+                        10 Rosebery Avenue, Holborn, EC1R 4TF<br>
+                        <a href="mailto:hello@qafitness.co.uk">hello@qafitness.co.uk</a>
+                    </address>
+                </div>
+            </div>
+
+            <div class="social-bar">
+                <span>FOLLOW THE PULSE:</span>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QAFitness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

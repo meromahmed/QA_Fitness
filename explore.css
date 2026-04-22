@@ -1,0 +1,256 @@
+/* Core Styling */
+:root {
+    --primary: #d4ff00; /* Neon green accents */
+    --dark: #000000;
+    --card-bg: #1a1a1a;
+    --text-white: #ffffff;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-white);
+    margin: 0;
+    /* Full black theme with your uploaded gym image */
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Centering Hero Section */
+.hero-section {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay h1 span { color: var(--primary); }
+
+/* Articles: Stacking them in a Column */
+.values-grid {
+    display: flex;
+    flex-direction: column; /* Stacked vertically */
+    align-items: center;    /* Centered in the middle */
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.value-card {
+    background: var(--card-bg);
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 500px; 
+    opacity: 1 !important; /* FORCED VISIBILITY: This fixes the "not showing" issue */
+    transition: transform 0.3s ease;
+}
+
+/* Smaller Images */
+.card-image img {
+    width: 100%;
+    height: 160px; 
+    object-fit: cover;
+}
+
+/* Centered Header */
+.section-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+.section-header h2 { color: var(--primary); }
+
+/* Review Section */
+.testimonial-section {
+    background: rgba(26, 26, 26, 0.9);
+    margin: 40px auto;
+    padding: 30px;
+    width: 85%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.testimonial-image img {
+    width: 130px; /* Small review picture */
+    height: 130px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-top: 15px;
+    border: 2px solid var(--primary);
+}
+
+
+/* Footer Container */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    padding: 80px 0 40px;
+    border-top: 2px solid #222;
+}
+
+
+/* Footer Container */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    padding: 80px 0 40px;
+    border-top: 2px solid #222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.logo {
+    font-size: 48px;        /* controls QA */
+    font-weight: 800;
+    color: white;           /* QA in white */
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: #4CAF50;         /* Fitness in green */
+    font-size: 48px;        /* same size as QA */
+    font-weight: 800;
+}
+
+
+
+/* Social Bar Styling */
+.social-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+.social-bar span {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: var(--text-white);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border: 1px solid #333;
+}
+
+/* Neon Hover Effect */
+.social-icon:hover {
+    background: var(--primary-neon);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--primary-neon);
+    border-color: var(--primary-neon);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-bar { flex-direction: column; }
+}
+
+
+/* animation*/
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply to Hero Content */
+.hero-content h1 {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-content p {
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.3s; /* Sequential entrance */
+    opacity: 0; /* Hidden until animation starts */
+}
+
+.hero-btns {
+    animation: fadeInUp 1.4s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+
+
+
+
+/* Initial hidden state */
+.facility-card, .plan-card, .testimonial-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Final visible state triggered by jQuery */
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px var(--primary-neon); }
+    50% { box-shadow: 0 0 20px var(--primary-neon); }
+    100% { box-shadow: 0 0 5px var(--primary-neon); }
+}
+
+.social-icon:hover {
+    animation: pulseGlow 1.5s infinite;
+    background: var(--primary-neon);
+    color: #000;
+}
+
+
+
+header {
+    z-index: 1000; /* Keeps nav on top */
+}
+
+.plan-btn, .cta-button, .calc-btn {
+    position: relative;
+    z-index: 10; 
+}

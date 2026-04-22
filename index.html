@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAFitness | Elite Accessible Fitness</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css/first.css">
+   
+   
+
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <nav class="container nav-flex" role="navigation" aria-label="Main Navigation">
+            <div class="logo">QA<span>Fitness</span></div>
+
+            <button class="mobile-menu-toggle" aria-label="Open Menu">☰</button>
+
+            <ul class="nav-links">
+                <li><a href="#" class="active" id="home-link">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#calculator">BMI Tool</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="form.html" class="nav-btn">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <section class="hero" role="region" aria-label="Welcome Banner">
+            <div class="hero-content">
+                <h1>REDEFINE YOUR LIMITS</h1>
+                <p>Experience the city's most elite, inclusive fitness center.</p>
+                <div id="live-clock" class="clock-display" aria-live="polite"></div>
+                <a href="form.html" class="cta-button">Start 7-Day Free Trial</a>
+            </div>
+        </section>
+
+        <section id="features" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">World-Class Features</h2>
+                <div class="grid-display">
+                    <article class="facility-card">
+                        <img src="images/machines.png" alt="Strength Training">
+                        <div class="card-text">
+                            <h3>Strength Center</h3>
+                            <p>Modern cable machines designed for biomechanical efficiency and safety.</p>
+                        </div>
+                    </article>
+                    <article class="facility-card">
+                        <img src="images/weight.png" alt="Weight Room">
+                        <div class="card-text">
+                            <h3>Elite Weight Room</h3>
+                            <p>A focused environment with premium dumbbells, barbells, and power racks.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="section-padding gray-bg">
+            <div class="container">
+                <div class="calc-wrapper">
+                    <div class="calc-info">
+                        <h2>BMI Calculator</h2>
+                        <p>Track your health progress with our accessible tool.</p>
+                    </div>
+                    <div class="calc-card">
+                        <div class="input-row">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" placeholder="e.g. 75">
+                        </div>
+                        <div class="input-row">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" placeholder="e.g. 180">
+                        </div>
+                        <button id="calculate-bmi" class="calc-btn">Calculate Now</button>
+                        <div id="bmi-result" class="result-box" aria-live="assertive">Enter details to see results.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Membership Plans</h2>
+                <div class="grid-display">
+                    <div class="plan-card">
+                        <h3>Starter</h3>
+                        <div class="price">£25<span>/mo</span></div>
+                        <ul><li>Standard Access</li><li>Lockers</li></ul>
+                    </div>
+                    <div class="plan-card featured">
+                        <div class="badge">Most Popular</div>
+                        <h3>Pro Elite</h3>
+                        <div class="price">£45<span>/mo</span></div>
+                        <ul><li>24/7 Access</li><li>Classes</li></ul>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Ultimate</h3>
+                        <div class="price">£75<span>/mo</span></div>
+                        <ul><li>Personal Training</li><li>Diet Plans</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section-padding gray-bg">
+            <div class="container">
+                <h2 class="section-title">Hear From Our Members</h2>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <blockquote class="quote-text">
+                            "I joined this gym in September. It's just perfect for a shy gym-goer like me. 
+                            I have become so confident and love the members! Chirly Lean"
+            
+                    </div>
+                    <div class="testimonial-image">
+                        <img src="images/member1.png" alt="Chirly Lean">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Visit Our Club</h2>
+                <div id="map" style="height: 450px; width: 100%; border-radius: 15px; border: 2px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></div>
+            </div>
+        </section>
+
+        <div class="hero-content">
+    <h1>REDEFINE YOUR LIMITS</h1>
+    <p>Experience the city's most elite, inclusive fitness center.</p>
+    <div id="live-clock" class="clock-display"></div>
+    
+    <div class="hero-btns">
+        <a href="contact.html" class="cta-button">Start Free Trial</a>
+        <a href="explore.html" class="cta-button secondary">Explore Gym</a>
+    </div>
+</div>
+
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">QA<span>Fitness</span></div>
+                    <p>Empowering every body. Open 05:00 – 23:00.</p>
+                </div>
+                <nav class="footer-nav">
+                    <h3>NAVIGATION</h3>
+                    <ul>
+                        <li><a href="#" class="footer-home-trigger">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                        <li><a href="form.html">Contact</a></li>
+                        <li><a href="explore.html">Go to Explore</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h3>FIND US</h3>
+                    <address>
+                        10 Rosebery Avenue, Holborn, EC1R 4TF<br>
+                        <a href="mailto:hello@qafitness.co.uk">hello@qafitness.co.uk</a>
+                    </address>
+                </div>
+            </div>
+
+            <div class="social-bar">
+                <span>FOLLOW THE PULSE:</span>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QAFitness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="first.js"></script>
+    <script>
+        // Inline Map Init
+        $(document).ready(function() {
+            const map = L.map('map').setView([51.5226, -0.1115], 16);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+            L.marker([51.5226, -0.1115]).addTo(map).bindPopup('QA Fitness').openPopup();
+        });
+    </script>
+</body>
+</html>]
